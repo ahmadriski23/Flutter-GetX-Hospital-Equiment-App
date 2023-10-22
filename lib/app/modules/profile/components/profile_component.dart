@@ -9,6 +9,8 @@ import '../../../shared/widgets/next_notif.dart';
 import '../controllers/profile_controller.dart';
 
 class ProfileComponent extends GetView<ProfileController> {
+  const ProfileComponent({super.key});
+
   @override
   Widget build(BuildContext context) {
     final profileController = Get.put(ProfileController());

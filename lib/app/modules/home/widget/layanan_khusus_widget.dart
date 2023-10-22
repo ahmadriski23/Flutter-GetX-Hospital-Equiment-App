@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
-import '../../../../shared/utils/color.dart';
-import '../../../../shared/utils/text_style.dart';
+import '../../../shared/utils/color.dart';
+import '../../../shared/utils/text_style.dart';
 
 class LayananKhususWidget extends StatelessWidget {
   const LayananKhususWidget({super.key});

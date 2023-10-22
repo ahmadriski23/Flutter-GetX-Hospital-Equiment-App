@@ -8,7 +8,7 @@ import 'package:vascomm_app/app/shared/utils/color.dart';
 import 'package:vascomm_app/app/shared/utils/text_style.dart';
 import '../../../shared/widgets/next_notif.dart';
 import '../controllers/home_controller.dart';
-import '../widget/layanan_kesehatan/layanan_khusus_widget.dart';
+import '../widget/layanan_khusus_widget.dart';
 import '../widget/product/product_card.dart';
 import '../widget/product/product_card_alat_kesehatan.dart';
 import '../widget/solusi_kesehatan_widget.dart';

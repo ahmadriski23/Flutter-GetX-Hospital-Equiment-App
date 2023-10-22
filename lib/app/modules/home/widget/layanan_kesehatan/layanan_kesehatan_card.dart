@@ -6,6 +6,8 @@ import '../../../../shared/utils/color.dart';
 import '../../../../shared/utils/text_style.dart';
 
 class LayananKesehatanCard extends GetView<HomeController> {
+  const LayananKesehatanCard({super.key});
+
   @override
   Widget build(BuildContext context) {
     final homeController = Get.put(HomeController());
