@@ -2,8 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:vascomm_app/app/modules/home/controllers/home_controller.dart';
 
-import '../../../shared/utils/color.dart';
-import '../../../shared/utils/text_style.dart';
+import '../../../../shared/utils/color.dart';
+import '../../../../shared/utils/text_style.dart';
 
 class LayananKesehatanCard extends GetView<HomeController> {
   @override

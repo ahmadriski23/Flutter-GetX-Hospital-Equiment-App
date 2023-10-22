@@ -1,16 +1,16 @@
 // ignore_for_file: unrelated_type_equality_checks
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:vascomm_app/app/modules/home/layanan_kesehatan/layanan_kesehatan_card.dart';
+import 'package:vascomm_app/app/modules/home/widget/layanan_kesehatan/layanan_kesehatan_card.dart';
 import 'package:vascomm_app/app/modules/home/widget/paket_pemeriksaan_card.dart';
 import 'package:vascomm_app/app/modules/home/widget/track_pemeriksaan_widget.dart';
 import 'package:vascomm_app/app/shared/utils/color.dart';
 import 'package:vascomm_app/app/shared/utils/text_style.dart';
 import '../../../shared/widgets/next_notif.dart';
 import '../controllers/home_controller.dart';
-import '../layanan_kesehatan/layanan_khusus_widget.dart';
-import '../product/product_card.dart';
-import '../product/product_card_alat_kesehatan.dart';
+import '../widget/layanan_kesehatan/layanan_khusus_widget.dart';
+import '../widget/product/product_card.dart';
+import '../widget/product/product_card_alat_kesehatan.dart';
 import '../widget/solusi_kesehatan_widget.dart';
 
 class HomeComponent extends StatelessWidget {
