@@ -59,22 +59,35 @@ class HomeComponent extends StatelessWidget {
                 child: Row(
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [
-                    Container(
-                      height: 40,
-                      width: 40,
-                      decoration: BoxDecoration(
-                        boxShadow: [
-                          BoxShadow(
-                              blurRadius: 30,
-                              color: Colors.grey.shade200,
-                              offset: const Offset(1, 15))
-                        ],
-                        shape: BoxShape.circle,
-                        color: Colors.white,
-                      ),
-                      child: Padding(
-                        padding: const EdgeInsets.all(8.0),
-                        child: Image.asset('assets/img/filter.png'),
+                    PopupMenuButton<String>(
+                      onSelected: (selectedType) {
+                        homeController.selectedTypeProduct(selectedType);
+                      },
+                      itemBuilder: (BuildContext context) {
+                        return homeController.type.map((type) {
+                          return PopupMenuItem<String>(
+                            value: type,
+                            child: Text(type),
+                          );
+                        }).toList();
+                      },
+                      child: Container(
+                        height: 40,
+                        width: 40,
+                        decoration: BoxDecoration(
+                          boxShadow: [
+                            BoxShadow(
+                                blurRadius: 30,
+                                color: Colors.grey.shade200,
+                                offset: const Offset(1, 15))
+                          ],
+                          shape: BoxShape.circle,
+                          color: Colors.white,
+                        ),
+                        child: Padding(
+                          padding: const EdgeInsets.all(8.0),
+                          child: Image.asset('assets/img/filter.png'),
+                        ),
                       ),
                     ),
                     Container(
