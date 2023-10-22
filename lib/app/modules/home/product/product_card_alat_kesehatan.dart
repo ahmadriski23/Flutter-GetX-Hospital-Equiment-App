@@ -5,17 +5,35 @@ import 'package:vascomm_app/app/modules/home/controllers/home_controller.dart';
 import '../../../shared/utils/text_style.dart';
 
 class ProductCardAlatKesehatan extends GetView<HomeController> {
+  final String searchText;
+  ProductCardAlatKesehatan({required this.searchText});
   @override
   Widget build(BuildContext context) {
     final homeController = Get.put(HomeController());
+    final filteredProducts = homeController.products
+        .where((product) =>
+            product.title.toLowerCase().contains(searchText.toLowerCase()))
+        .toList();
+    if (filteredProducts.isEmpty) {
+      return SizedBox(
+        height: 100,
+        child: Center(
+          child: Text(
+            "Produk tidak ditemukan",
+            style: AppText.blackText,
+          ),
+        ),
+      );
+    }
     return SizedBox(
       height: 200,
       child: ListView.builder(
           physics: const BouncingScrollPhysics(),
           scrollDirection: Axis.horizontal,
-          itemCount: homeController.products.length - 3,
+          itemCount: filteredProducts.length - 2,
           itemBuilder: (context, index) {
-            final product = homeController.products[index];
+            final product = filteredProducts[index];
+
             return Container(
               margin: const EdgeInsets.only(right: 20),
               height: 180,

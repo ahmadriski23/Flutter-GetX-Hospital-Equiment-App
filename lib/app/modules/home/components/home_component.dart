@@ -90,30 +90,35 @@ class HomeComponent extends StatelessWidget {
                         ),
                       ),
                     ),
-                    Container(
-                      height: 40,
-                      width: Get.width / 2,
-                      decoration: BoxDecoration(
-                        color: Colors.white,
-                        borderRadius: BorderRadius.circular(20.0),
-                        boxShadow: [
-                          BoxShadow(
-                            color: Colors.grey.shade200,
-                            blurRadius: 30.0,
-                            offset: const Offset(1.0, 15.0),
-                          ),
-                        ],
-                      ),
-                      child: const Padding(
-                        padding: EdgeInsets.symmetric(horizontal: 15.0),
-                        child: TextField(
-                          decoration: InputDecoration(
-                            border: InputBorder.none,
-                            suffixIcon: Icon(
-                              Icons.search,
-                              color: AppColors.primaryColor,
+                    Flexible(
+                      child: Container(
+                        height: 40,
+                        width: Get.width,
+                        decoration: BoxDecoration(
+                          color: Colors.white,
+                          borderRadius: BorderRadius.circular(20.0),
+                          boxShadow: [
+                            BoxShadow(
+                              color: Colors.grey.shade200,
+                              blurRadius: 30.0,
+                              offset: const Offset(1.0, 15.0),
                             ),
-                            hintText: 'Search',
+                          ],
+                        ),
+                        child: Padding(
+                          padding: const EdgeInsets.symmetric(horizontal: 15.0),
+                          child: TextField(
+                            onChanged: (text) {
+                              homeController.searchText.value = text;
+                            },
+                            decoration: const InputDecoration(
+                              border: InputBorder.none,
+                              suffixIcon: Icon(
+                                Icons.search,
+                                color: AppColors.primaryColor,
+                              ),
+                              hintText: 'Search',
+                            ),
                           ),
                         ),
                       ),
@@ -188,22 +193,29 @@ class HomeComponent extends StatelessWidget {
                   Visibility(
                     visible:
                         homeController.selectedTypeProduct == "All Product",
-                    child: ProductCard(),
+                    child: ProductCard(
+                        searchText: homeController.searchText.value),
                   ),
                   Visibility(
                     visible: homeController.selectedTypeProduct ==
                         "Layanan Kesehatan",
-                    child: ProductCardAlatKesehatan(),
+                    child: ProductCardAlatKesehatan(
+                      searchText: homeController.searchText.value,
+                    ),
                   ),
                   Visibility(
                     visible:
                         homeController.selectedTypeProduct == "Alat Kesehatan",
-                    child: ProductCardAlatKesehatan(),
+                    child: ProductCardAlatKesehatan(
+                      searchText: homeController.searchText.value,
+                    ),
                   ),
                   Visibility(
                     visible: homeController.selectedTypeProduct ==
                         "Jasa Pengantaran",
-                    child: ProductCardAlatKesehatan(),
+                    child: ProductCardAlatKesehatan(
+                      searchText: homeController.searchText.value,
+                    ),
                   ),
                 ],
               ),

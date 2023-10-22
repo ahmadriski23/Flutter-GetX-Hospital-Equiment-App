@@ -7,7 +7,7 @@ class HomeController extends GetxController {
   //TODO: Implement HomeController
 
   final count = 0.obs;
-
+  final RxString searchText = ''.obs;
   final selectedTypeProduct = 'All Product'.obs;
   final type = [
     'All Product',
