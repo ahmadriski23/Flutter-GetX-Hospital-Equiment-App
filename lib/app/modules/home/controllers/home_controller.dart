@@ -26,6 +26,25 @@ class HomeController extends GetxController {
   }
 
   // * list product
+  final List<Product> products2 = [
+    Product(
+      title: 'Suntik Steril',
+      image: 'assets/img/product.png',
+      type: 'Alat Kesehatan',
+      stock: 10,
+      price: 15.000,
+      rating: 4.5,
+    ),
+    Product(
+      title: 'Suntik Steril 2',
+      image: 'assets/img/product.png',
+      type: 'Alat Kesehatan',
+      stock: 0,
+      price: 250.000,
+      rating: 4.5,
+    ),
+  ];
+
   final List<Product> products = [
     Product(
       title: 'Suntik Steril',

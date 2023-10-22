@@ -10,7 +10,7 @@ class ProductCardAlatKesehatan extends GetView<HomeController> {
   @override
   Widget build(BuildContext context) {
     final homeController = Get.put(HomeController());
-    final filteredProducts = homeController.products
+    final filteredProducts = homeController.products2
         .where((product) =>
             product.title.toLowerCase().contains(searchText.toLowerCase()))
         .toList();
@@ -30,7 +30,7 @@ class ProductCardAlatKesehatan extends GetView<HomeController> {
       child: ListView.builder(
           physics: const BouncingScrollPhysics(),
           scrollDirection: Axis.horizontal,
-          itemCount: filteredProducts.length - 2,
+          itemCount: filteredProducts.length,
           itemBuilder: (context, index) {
             final product = filteredProducts[index];
 
