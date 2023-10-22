@@ -6,7 +6,7 @@ import '../../../shared/utils/text_style.dart';
 
 class ProductCard extends GetView<HomeController> {
   final String searchText;
-  ProductCard({required this.searchText});
+  const ProductCard({super.key, required this.searchText});
 
   @override
   Widget build(BuildContext context) {
